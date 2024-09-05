@@ -1,0 +1,201 @@
+{
+  "val": 19.5,
+  "MinSeverity": 19,
+  "MaxSeverity": 20,
+  "Defenses": [
+    "Trigger full system lockdown",
+    "Deploy emergency defenses"
+  ],
+  "left": {
+    "val": 9.5,
+    "MinSeverity": 9,
+    "MaxSeverity": 10,
+    "Defenses": [
+      "Block IP range",
+      "Increase monitoring"
+    ],
+    "left": {
+      "val": 3.5,
+      "MinSeverity": 3,
+      "MaxSeverity": 4,
+      "Defenses": [
+        "Rate-limit IPs",
+        "Activate basic firewall"
+      ],
+      "left": {
+        "val": 1.5,
+        "MinSeverity": 1,
+        "MaxSeverity": 2,
+        "Defenses": [
+          "Monitor traffic",
+          "Log incident"
+        ],
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "val": 5.5,
+        "MinSeverity": 5,
+        "MaxSeverity": 6,
+        "Defenses": [
+          "Isolate affected systems",
+          "Deploy malware scan"
+        ],
+        "left": null,
+        "right": {
+          "val": 7.5,
+          "MinSeverity": 7,
+          "MaxSeverity": 8,
+          "Defenses": [
+            "Activate IDS",
+            "Notify security team"
+          ],
+          "left": null,
+          "right": null
+        }
+      }
+    },
+    "right": {
+      "val": 13.5,
+      "MinSeverity": 13,
+      "MaxSeverity": 14,
+      "Defenses": [
+        "Activate full network scan",
+        "Increase logging detail"
+      ],
+      "left": {
+        "val": 11.5,
+        "MinSeverity": 11,
+        "MaxSeverity": 12,
+        "Defenses": [
+          "Deploy advanced firewall",
+          "Quarantine infected hosts"
+        ],
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "val": 15.5,
+        "MinSeverity": 15,
+        "MaxSeverity": 16,
+        "Defenses": [
+          "Lockdown network segments",
+          "Activate disaster recovery"
+        ],
+        "left": null,
+        "right": {
+          "val": 17.5,
+          "MinSeverity": 17,
+          "MaxSeverity": 18,
+          "Defenses": [
+            "Notify external security",
+            "Initiate incident response"
+          ],
+          "left": null,
+          "right": null
+        }
+      }
+    }
+  },
+  "right": {
+    "val": 29.5,
+    "MinSeverity": 29,
+    "MaxSeverity": 30,
+    "Defenses": [
+      "Deploy honeypots",
+      "Alert system administrators"
+    ],
+    "left": {
+      "val": 23.5,
+      "MinSeverity": 23,
+      "MaxSeverity": 24,
+      "Defenses": [
+        "Engage threat intelligence",
+        "Perform security audit"
+      ],
+      "left": {
+        "val": 21.5,
+        "MinSeverity": 21,
+        "MaxSeverity": 22,
+        "Defenses": [
+          "Monitor high-priority targets",
+          "Activate advanced monitoring"
+        ],
+        "left": null,
+        "right": null
+      },
+      "right": {
+        "val": 25.5,
+        "MinSeverity": 25,
+        "MaxSeverity": 26,
+        "Defenses": [
+          "Perform system reboot",
+          "Update security policies"
+        ],
+        "left": null,
+        "right": {
+          "val": 27.5,
+          "MinSeverity": 27,
+          "MaxSeverity": 28,
+          "Defenses": [
+            "Evaluate network traffic",
+            "Remove unauthorized access"
+          ],
+          "left": null,
+          "right": null
+        }
+      }
+    },
+    "right": {
+      "val": 35.5,
+      "MinSeverity": 35,
+      "MaxSeverity": 36,
+      "Defenses": [
+        "Engage legal team",
+        "Begin public communication"
+      ],
+      "left": {
+        "val": 31.5,
+        "MinSeverity": 31,
+        "MaxSeverity": 32,
+        "Defenses": [
+          "Initiate emergency shutdown",
+          "Prepare disaster recovery"
+        ],
+        "left": null,
+        "right": {
+          "val": 33.5,
+          "MinSeverity": 33,
+          "MaxSeverity": 34,
+          "Defenses": [
+            "Activate all available defenses",
+            "Notify senior management"
+          ],
+          "left": null,
+          "right": null
+        }
+      },
+      "right": {
+        "val": 37.5,
+        "MinSeverity": 37,
+        "MaxSeverity": 38,
+        "Defenses": [
+          "Coordinate with law enforcement",
+          "Escalate to CEO"
+        ],
+        "left": null,
+        "right": {
+          "val": 39.5,
+          "MinSeverity": 39,
+          "MaxSeverity": 40,
+          "Defenses": [
+            "Prepare for full shutdown",
+            "Deploy final countermeasures"
+          ],
+          "left": null,
+          "right": null
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Task0509
 {
@@ -111,6 +113,67 @@ namespace Task0509
             else
             {
                 return root;
+            }
+        }
+
+        internal TreeNode balanced()
+        {
+            // Store nodes of given BST in sorted order 
+            List<TreeNode> nodes = new List<TreeNode>();
+            storeBSTNodes(root, nodes);
+
+            // Constructs BST from nodes[] 
+            int n = nodes.Count;
+            return buildTreeUtil(nodes, 0, n - 1);
+        }
+
+        private TreeNode buildTreeUtil(List<TreeNode> nodes, int start, int end)
+        {
+            // base case 
+            if (start > end)
+            {
+                return null;
+            }
+
+            /* Get the middle element and make it root */
+            int mid = (start + end) / 2;
+            TreeNode node = nodes[mid];
+
+            /* Using index in Inorder traversal, construct 
+               left and right subtress */
+            node.left = buildTreeUtil(nodes, start, mid - 1);
+            node.right = buildTreeUtil(nodes, mid + 1, end);
+
+            return node;
+        }
+
+        private void storeBSTNodes(TreeNode root, List<TreeNode> nodes)
+        {
+            // Base case 
+            if (root == null)
+            {
+                return;
+            }
+
+            // Store nodes in Inorder (which is sorted 
+            // order for BST) 
+            storeBSTNodes(root.left, nodes);
+            nodes.Add(root);
+            storeBSTNodes(root.right, nodes);
+        }
+
+        internal void InOrderPrint()
+        {
+            recutsiveInOrderPrint(root);
+        }
+
+        private void recutsiveInOrderPrint(TreeNode root)
+        {
+            if (root != null)
+            {
+                recutsiveInOrderPrint(root.left);
+                root.print();
+                recutsiveInOrderPrint(root.right);
             }
         }
     }

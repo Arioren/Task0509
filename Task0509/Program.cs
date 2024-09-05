@@ -10,7 +10,7 @@ internal class Program
     {
 
         //get all tree nodes
-        TreeNode[] Nodes = ReadFromJsonAsync<TreeNode[]>("../../../defenceStrategiesBalanced.json");
+        TreeNode[] Nodes = ReadFromJsonAsync<TreeNode[]>("../../../defenceStrategies.json");
 
         //insert the tree nodes into the tree
         DefenceStrategiesBST myTree = new DefenceStrategiesBST();
@@ -19,9 +19,20 @@ internal class Program
             myTree.insert(node);
         }
 
-
         //print the tree
         myTree.PreOrderPrint();
+
+        //balance the tree
+        myTree.root = myTree.balanced();
+
+        //print again the tree
+        myTree.PreOrderPrint();
+
+        //print the tree inorder
+        myTree.InOrderPrint();
+
+        //insert the balanced tree into json
+        WriteToJsonFileAsync<TreeNode>("../../../theBalancedTree.json", myTree.root);
 
         //get all threats
         Threats[] threats = ReadFromJsonAsync<Threats[]>("../../../threats.json");
@@ -76,6 +87,16 @@ internal class Program
         return default;
     }
 }
+
+
+    //function to write to json file
+    static async Task WriteToJsonFileAsync<T>(string filePath, T data, JsonSerializerOptions options = null)
+    {
+        options ??= new JsonSerializerOptions { WriteIndented = true };
+        await using var stream = File.Create(filePath);
+        await JsonSerializer.SerializeAsync(stream, data, options);
+    }
+
 }
 
 
